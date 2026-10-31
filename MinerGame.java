@@ -7,17 +7,27 @@ import java.util.Scanner;
 
 public class MinerGame {
     private static final String[] NAMES = {
-        "Bakır Ocağı", "Demir Ocağı", "Altın Ocağı", "Elmas Ocağı", "Kristal Ocağı"
+        "Bakır Ocağı", "Demir Ocağı", "Altın Ocağı", "Elmas Ocağı", "Kristal Ocağı",
+        "Uranyum Ocağı", "Obsidyen Ocağı", "Kobalt Ocağı", "Mitril Ocağı", "Antik Maden"
     };
-    private static final double[] INCOME = {1, 8, 50, 350, 2500};
-    private static final double[] UNLOCK_COST = {0, 500, 5000, 50000, 500000};
+    private static final double[] INCOME = {
+        1, 8, 50, 350, 2500, 18000, 125000, 900000, 6000000, 40000000
+    };
+    private static final double[] UNLOCK_COST = {
+        0, 500, 5000, 50000, 500000, 5000000, 50000000, 500000000,
+        5000000000.0, 50000000000.0
+    };
     private static final String SAVE_FILE = "miner_save_java.properties";
     private static final long OFFLINE_LIMIT_SECONDS = 8 * 60 * 60;
 
     private static double cash;
-    private static final int[] levels = {1, 0, 0, 0, 0};
+    private static final int[] levels = new int[NAMES.length];
     private static boolean cheatMode = true;
     private static int prestige;
+
+    static {
+        levels[0] = 1;
+    }
 
     private static double number(Properties data, String key, double fallback) {
         try {

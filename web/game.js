@@ -8,6 +8,11 @@ const MINES = [
   { name: "Altın Ocağı", icon: "🪙", income: 50, unlockCost: 5000 },
   { name: "Elmas Ocağı", icon: "💎", income: 350, unlockCost: 50000 },
   { name: "Kristal Ocağı", icon: "🔮", income: 2500, unlockCost: 500000 },
+  { name: "Uranyum Ocağı", icon: "☢️", income: 18000, unlockCost: 5000000 },
+  { name: "Obsidyen Ocağı", icon: "🌋", income: 125000, unlockCost: 50000000 },
+  { name: "Kobalt Ocağı", icon: "🔷", income: 900000, unlockCost: 500000000 },
+  { name: "Mitril Ocağı", icon: "⚒️", income: 6000000, unlockCost: 5000000000 },
+  { name: "Antik Maden", icon: "🏺", income: 40000000, unlockCost: 50000000000 },
 ];
 const currency = new Intl.NumberFormat("tr-TR", {
   style: "currency",
@@ -30,7 +35,7 @@ const elements = {
 function newGame() {
   return {
     cash: 0,
-    levels: [1, 0, 0, 0, 0],
+    levels: [1, ...Array(MINES.length - 1).fill(0)],
     cheat_mode: true,
     prestige: 0,
     last_saved: Date.now() / 1000,
@@ -232,7 +237,7 @@ function handleAction(action, button) {
         return;
       }
       game.cash = 0;
-      game.levels = [1, 0, 0, 0, 0];
+      game.levels = [1, ...Array(MINES.length - 1).fill(0)];
       game.prestige += 1;
       showToast(`Prestij tamamlandı! Üretim çarpanın ${(1 + 0.5 * game.prestige).toLocaleString("tr-TR")}x.`);
       saveGame();

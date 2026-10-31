@@ -17,13 +17,18 @@ MINES = [
     {"name": "Altın Ocağı", "income": 50.0, "unlock_cost": 5_000},
     {"name": "Elmas Ocağı", "income": 350.0, "unlock_cost": 50_000},
     {"name": "Kristal Ocağı", "income": 2_500.0, "unlock_cost": 500_000},
+    {"name": "Uranyum Ocağı", "income": 18_000.0, "unlock_cost": 5_000_000},
+    {"name": "Obsidyen Ocağı", "income": 125_000.0, "unlock_cost": 50_000_000},
+    {"name": "Kobalt Ocağı", "income": 900_000.0, "unlock_cost": 500_000_000},
+    {"name": "Mitril Ocağı", "income": 6_000_000.0, "unlock_cost": 5_000_000_000},
+    {"name": "Antik Maden", "income": 40_000_000.0, "unlock_cost": 50_000_000_000},
 ]
 
 
 def new_game() -> dict[str, Any]:
     return {
         "cash": 0.0,
-        "levels": [1, 0, 0, 0, 0],
+        "levels": [1] + [0] * (len(MINES) - 1),
         "cheat_mode": True,
         "prestige": 0,
         "last_saved": time.time(),
@@ -185,7 +190,7 @@ def prestige(game: dict[str, Any]) -> None:
         print(f"Prestij için en az {format_cash(requirement)} nakit gerekli.")
         return
     game["cash"] = 0.0
-    game["levels"] = [1, 0, 0, 0, 0]
+    game["levels"] = [1] + [0] * (len(MINES) - 1)
     game["prestige"] += 1
     print(
         f"Prestij yaptın! Üretimin artık "

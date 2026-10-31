@@ -3,7 +3,7 @@ using System.Text.Json;
 internal sealed class GameState
 {
     public double Cash { get; set; }
-    public int[] Levels { get; set; } = [1, 0, 0, 0, 0];
+    public int[] Levels { get; set; } = [1, 0, 0, 0, 0, 0, 0, 0, 0, 0];
     public bool CheatMode { get; set; } = true;
     public int Prestige { get; set; }
     public double LastSaved { get; set; } = DateTimeOffset.UtcNow.ToUnixTimeMilliseconds() / 1000.0;
@@ -12,9 +12,12 @@ internal sealed class GameState
 internal static class Program
 {
     private static readonly string[] Names =
-        ["Bakır Ocağı", "Demir Ocağı", "Altın Ocağı", "Elmas Ocağı", "Kristal Ocağı"];
-    private static readonly double[] Income = [1, 8, 50, 350, 2500];
-    private static readonly double[] UnlockCost = [0, 500, 5000, 50000, 500000];
+        ["Bakır Ocağı", "Demir Ocağı", "Altın Ocağı", "Elmas Ocağı", "Kristal Ocağı",
+         "Uranyum Ocağı", "Obsidyen Ocağı", "Kobalt Ocağı", "Mitril Ocağı", "Antik Maden"];
+    private static readonly double[] Income =
+        [1, 8, 50, 350, 2500, 18000, 125000, 900000, 6000000, 40000000];
+    private static readonly double[] UnlockCost =
+        [0, 500, 5000, 50000, 500000, 5000000, 50000000, 500000000, 5000000000, 50000000000];
     private static readonly string SaveFile = "miner_save_csharp.json";
     private const double OfflineLimitSeconds = 8 * 60 * 60;
 

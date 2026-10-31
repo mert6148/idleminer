@@ -4,6 +4,26 @@ Türkçe idle madencilik oyunu. Python, Java ve C# komut satırı sürümlerinin
 sıra telefondan tarayıcıyla oynanabilen, dokunmatik ekrana uyumlu bir mobil
 sürümü bulunur.
 
+## Üretim hattı
+
+Oyunda beş yeni ocakla toplam on maden bulunur. Yeni ocaklar sırayla açılır;
+hile modu açıkken açma ve geliştirme ücretsizdir.
+
+| Maden | Üretim / saniye | Açma bedeli |
+|---|---:|---:|
+| Bakır Ocağı | $1 | Başlangıç |
+| Demir Ocağı | $8 | $500 |
+| Altın Ocağı | $50 | $5.000 |
+| Elmas Ocağı | $350 | $50.000 |
+| Kristal Ocağı | $2.500 | $500.000 |
+| Uranyum Ocağı | $18.000 | $5.000.000 |
+| Obsidyen Ocağı | $125.000 | $50.000.000 |
+| Kobalt Ocağı | $900.000 | $500.000.000 |
+| Mitril Ocağı | $6.000.000 | $5.000.000.000 |
+| Antik Maden | $40.000.000 | $50.000.000.000 |
+
+Eski oyun kayıtları yeni madenleri kilitli olarak ekleyip mevcut ilerlemeyi korur.
+
 ## Windows'ta çalıştırma
 
 Komut İstemi'ni veya PowerShell'i bu klasörde açın:
