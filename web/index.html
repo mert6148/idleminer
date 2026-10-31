@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="tr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <meta name="theme-color" content="#111811">
+    <meta name="description" content="Maden imparatorluğunu cebinden yönet.">
+    <title>Maden İmparatorluğu</title>
+    <link rel="stylesheet" href="style.css?v=2">
+    <script src="game.js?v=2" defer></script>
+  </head>
+  <body>
+    <main class="app-shell">
+      <header class="topbar">
+        <a class="brand" href="#" aria-label="Maden İmparatorluğu ana sayfa">
+          <span class="brand-icon" aria-hidden="true">⛏</span>
+          <span><strong>MADEN</strong><small>İMPARATORLUĞU</small></span>
+        </a>
+        <span class="save-indicator" id="save-status" aria-live="polite">Kayıt hazır</span>
+      </header>
+
+      <section class="hero" aria-labelledby="welcome-title">
+        <div>
+          <p class="eyebrow">KÜÇÜK BİR OCAK, BÜYÜK BİR SERVET</p>
+          <h1 id="welcome-title">İmparatorluğunu<br>inşa et.</h1>
+          <p class="hero-copy">Madenlerini geliştir, gelirini büyüt. Sen uzaktayken bile üretim sürer.</p>
+        </div>
+        <div class="hero-art" aria-hidden="true"><span>⛰</span><i>✦</i><b>✦</b></div>
+      </section>
+
+      <section class="wallet-panel" aria-label="Oyun durumu">
+        <div class="wallet-main">
+          <span class="eyebrow">TOPLAM NAKİT</span>
+          <strong id="cash">$0,00</strong>
+          <span class="income"><span class="pulse-dot"></span><span id="income">$0,00</span>&nbsp;/ saniye</span>
+        </div>
+        <div class="wallet-stats">
+          <div class="stat"><span>PRESTİJ</span><strong id="prestige-count">0</strong></div>
+          <div class="stat"><span>ÜRETİM ÇARPANI</span><strong id="multiplier">10x</strong></div>
+        </div>
+      </section>
+
+      <section class="mine-section" aria-labelledby="mine-heading">
+        <div class="section-heading">
+          <div><p class="eyebrow">ÜRETİM HATTI</p><h2 id="mine-heading">Madenlerin</h2></div>
+          <span class="mine-count" id="mine-count">1 / 5 AÇIK</span>
+        </div>
+        <div class="mine-list" id="mine-list"></div>
+      </section>
+
+      <section class="controls" aria-label="Oyun kontrolleri">
+        <div class="section-heading compact-heading">
+          <div><p class="eyebrow">YÖNETİM</p><h2>İmparatorluk</h2></div>
+        </div>
+        <div class="action-grid">
+          <button class="action-card cheat-action" id="cheat-toggle" type="button" data-action="toggle-cheat">
+            <span class="action-icon" aria-hidden="true">⚡</span>
+            <span><strong>Hile modu</strong><small id="cheat-label">Açık · 10x kazanç</small></span>
+            <span class="switch" id="cheat-switch" aria-hidden="true"></span>
+          </button>
+          <button class="action-card bonus-action" type="button" data-action="bonus">
+            <span class="action-icon" aria-hidden="true">✦</span>
+            <span><strong>Bonus nakit</strong><small>100.000 ekle</small></span>
+          </button>
+          <button class="action-card prestige-action" type="button" data-action="prestige">
+            <span class="action-icon" aria-hidden="true">↗</span>
+            <span><strong>Prestij yap</strong><small>1.000.000 nakitte açılır</small></span>
+          </button>
+          <button class="action-card reset-action" type="button" data-action="reset">
+            <span class="action-icon" aria-hidden="true">⟳</span>
+            <span><strong>Yeni oyun</strong><small>Bu cihazdaki kaydı sil</small></span>
+          </button>
+        </div>
+      </section>
+
+      <footer class="footer">İlerlemen bu cihazda otomatik kaydedilir.</footer>
+    </main>
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  </body>
+</html>

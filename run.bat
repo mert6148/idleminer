@@ -6,11 +6,13 @@ pushd "%~dp0"
 if /I "%~1"=="python" goto run_python
 if /I "%~1"=="java" goto run_java
 if /I "%~1"=="csharp" goto run_csharp
+if /I "%~1"=="mobile" goto run_mobile
 
 echo Kullanim:
 echo   run.bat python
 echo   run.bat java
 echo   run.bat csharp
+echo   run.bat mobile
 echo.
 echo Gereksinimler: Python 3.9+, Java JDK ve .NET 9 SDK.
 popd
@@ -58,6 +60,17 @@ if errorlevel 1 (
     goto finish
 )
 dotnet run --project "%~dp0csharp\MinerGame.csproj"
+set "RESULT=%ERRORLEVEL%"
+goto finish
+
+:run_mobile
+where python >nul 2>nul
+if errorlevel 1 (
+    echo Python bulunamadi. Python 3.9 veya ustunu yukleyip PATH'e ekleyin.
+    set "RESULT=1"
+    goto finish
+)
+python mobile_server.py
 set "RESULT=%ERRORLEVEL%"
 goto finish
 

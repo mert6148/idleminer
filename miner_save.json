@@ -1,13 +1,13 @@
 {
-  "cash": 202875.935025692,
+  "cash": 623567.8963389397,
   "levels": [
+    2,
     1,
     1,
     1,
-    0,
     0
   ],
-  "cheat_mode": false,
+  "cheat_mode": true,
   "prestige": 0,
-  "last_saved": 1793444619.8775241
+  "last_saved": 1793444819.9576411
 }
